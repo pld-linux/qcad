@@ -1,16 +1,16 @@
---- Makefile.org	Mon Apr  9 08:38:42 2001
-+++ Makefile	Mon Apr  9 08:39:24 2001
-@@ -9,10 +9,10 @@
- 
- CC	=	g++
- CFLAGS	=	-Wall -W -O2 -fno-strength-reduce
+--- qcad-1.4.12-src/Makefile.orig	Mon May 20 13:04:24 2002
++++ qcad-1.4.12-src/Makefile	Mon May 20 21:51:26 2002
+@@ -11,10 +11,10 @@
+ CXX	=	g++
+ CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
+ CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
 -INCPATH	=	-I$(QTDIR)/include
 +INCPATH	=	-I/usr/X11R6/include -I/usr/X11R6/include/qt
  LINK	=	g++
 -LFLAGS	=	-static
--LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lX11
-+LFLAGS	=	
-+LIBS	=	-L/usr/X11R6/lib -lqt -lX11
- MOC	=	moc
+-LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
++LFLAGS	=
++LIBS	=	$(SUBLIBS) -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
+ MOC	=	$(QTDIR)/bin/moc
+ UIC	=	$(QTDIR)/bin/uic
  
- ####### Files
