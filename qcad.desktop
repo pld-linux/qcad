@@ -6,3 +6,4 @@ Icon=qcad.png
 Exec=qcad
 Terminal=0
 Type=Application
+Categories=Qt;Graphics
