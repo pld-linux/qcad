@@ -1,0 +1,20 @@
+diff -urN qcad-1.4.16-src.orig/main.cpp qcad-1.4.16-src/main.cpp
+--- qcad-1.4.16-src.orig/main.cpp	Tue Jul  2 19:54:03 2002
++++ qcad-1.4.16-src/main.cpp	Sat Aug 31 02:09:33 2002
+@@ -15,6 +15,7 @@
+ #include <qplatinumstyle.h>
+ #include <qtimer.h>
+ #include <qwindowsstyle.h>
++#include <qlibrary.h>
+ 
+ #include "rappwin.h"
+ #include "rconfig.h"
+@@ -58,7 +59,7 @@
+ 
+   // Set Application style:
+   //
+-  QApplication::setStyle( new QWindowsStyle() );
++  QLibrary resolve ( QWindowsStyle );
+   //QApplication::setStyle( new QPlatinumStyle() );
+   app.setMainWidget(appWin);
+ 
