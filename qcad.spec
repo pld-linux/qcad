@@ -17,7 +17,6 @@ BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 QCad is a professional CAD System. With QCad you can easily construct
