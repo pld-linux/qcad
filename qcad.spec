@@ -2,24 +2,19 @@ Summary:	a professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	1.4.16
-Release:	4
+Version:	1.5.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Graphics
-Source0:	http://telia.dl.sourceforge.net/sourceforge/qcad/%{name}-%{version}-src.tar.gz
+Source0:	http://prdownloads.sourceforge.net/qcad/%{name}-%{version}-src.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch0:		%{name}-datadir.patch
-Patch1:		%{name}-pl.po.patch
-Patch2:		%{name}-port-kde3.patch
-Patch3:		%{name}-Makefile.patch
-Patch4: 	%{name}-lib.patch
+Patch1:		%{name}-Makefile.patch
+Patch2: 	%{name}-lib.patch
 Icon:		qcad.xpm
 URL:		http://www.qcad.org/
-Requires:	qt >= 3
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 3.0.5
-#BuildRequires:	tmake >= 1.7-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -43,19 +38,18 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
 %setup -q -n %{name}-%{version}-src
-%patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
+QTDIR="/usr/X11R6"
+export QTDIR
 %{__make} \
-	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DNO_DEBUG} -DDATADIR=\\\"%{_datadir}/\\\"" \
 	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
-	MOC="moc" \
+	QMAKE_CONF="%{_datadir}/qt/mkspecs/linux-g++/qmake.conf" \
 	LDFLAGS="%{rpmldflags}" qcad
 
+#	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/qcad,%{_datadir}/qcad} \
