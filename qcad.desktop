@@ -4,6 +4,6 @@ Comment=QCad - 2D CAD system
 Comment[pl]=QCad - dwuwymiarowy CAD
 Icon=qcad.png
 Exec=qcad
-Terminal=0
+Terminal=false
 Type=Application
 Categories=Qt;Graphics
