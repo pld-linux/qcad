@@ -91,6 +91,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc qcad-manual-2.0.0.5-1.xml/*
 %attr(755,root,root) %{_bindir}/qcad
-%{_datadir}/qcad
+%dir %{_datadir}/qcad
+%{_datadir}/qcad/examples
+%{_datadir}/qcad/fonts
+%{_datadir}/qcad/patterns
+%{_datadir}/qcad/scripts
+%dir %{_datadir}/qcad/qm
+%lang(da) %{_datadir}/qcad/qm/*_da.qm
+%lang(de) %{_datadir}/qcad/qm/*_de.qm
+%{_datadir}/qcad/qm/*_en.qm
+%lang(hu) %{_datadir}/qcad/qm/*_hu.qm
+%lang(no) %{_datadir}/qcad/qm/*_no.qm
 %{_desktopdir}/qcad.desktop
 %{_pixmapsdir}/qcad.png
