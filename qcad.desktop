@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=QCad
+Comment=QCad - 2D CAD system
+Comment[pl]=QCAd - CAD 2D
+Icon=qcad.png
+Exec=qcad
+Terminal=0
+Type=Application
