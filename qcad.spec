@@ -2,16 +2,20 @@ Summary:	A professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	2.0.1.3
+Version:	2.0.2.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://www.ribbonsoft.com/archives/qcad/%{name}-%{version}-1.src.tar.gz
-# Source0-md5:	480c0a67e37ed57d14e67d2977db8cff
+# Source0-md5:	680381f2c34993ca538b66b84b00b56f
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-2.0.0.5-1.xml.zip
-# Source4-md5:	25717640f5d7d5c231695bf39a8c02ee
+Source3:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-de-2.0.1.3-1.html.zip
+# Source3-md5:	78bfef9f9295899e1534b24469a8a40e
+Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-en-2.0.1.3-1.html.zip
+# Source4-md5:	4c9e3c08e4b0b9e41eef2fdcc0e8af41
+Source5:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-2.0.1.4-2.html.zip
+# Source5-md5:	978358eff7246dad3b5e94fc4d346552
 Icon:		qcad.xpm
 URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	XFree86-devel
@@ -37,7 +41,7 @@ características e salvá-los como arquivos DXF. Estes arquivos DXF são
 a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
-%setup -q -n %{name}-%{version}-1.src -a4
+%setup -q -n %{name}-%{version}-1.src -a3 -a4 -a5
 
 %build
 QTDIR=%{_prefix}; export QTDIR
@@ -90,7 +94,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc qcad-manual-2.0.0.5-1.xml/*
+%doc qcad-manual-en-2.0.1.3-1.html
+%lang(de) %doc qcad-manual-de-2.0.1.3-1.html
+%lang(hu) %doc qcad-manual-hu-2.0.1.4-2.html
 %attr(755,root,root) %{_bindir}/qcad
 %dir %{_datadir}/qcad
 %{_datadir}/qcad/examples
@@ -106,6 +112,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_datadir}/qcad/qm/*_fr.qm
 %lang(hu) %{_datadir}/qcad/qm/*_hu.qm
 %lang(it) %{_datadir}/qcad/qm/*_it.qm
+%lang(nl) %{_datadir}/qcad/qm/*_nl.qm
 %lang(nb) %{_datadir}/qcad/qm/*_no.qm
+%lang(ru) %{_datadir}/qcad/qm/*_ru.qm
+%lang(sk) %{_datadir}/qcad/qm/*_sk.qm
+%lang(tr) %{_datadir}/qcad/qm/*_tr.qm
 %{_desktopdir}/qcad.desktop
 %{_pixmapsdir}/qcad.png
