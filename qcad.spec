@@ -2,15 +2,16 @@ Summary:	A professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	1.5.4
-Release:	1
+Version:	2.0.0.1
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/qcad/%{name}-%{version}-src.tar.gz
-# Source0-md5:	73964f6fd23780b2d83de508203617bd
+Source0:	http://www.ribbonsoft.com/archives/qcad/%{name}-%{version}-1.src.tar.gz
+# Source0-md5:	a2f62fb7865aa35445d9cbfc3414096f
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch0:		%{name}-lib.patch
+Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-2.0.0.5-1.xml.zip
+# Source4-md5:	25717640f5d7d5c231695bf39a8c02ee
 Icon:		qcad.xpm
 URL:		http://www.qcad.org/
 BuildRequires:	XFree86-devel
@@ -35,36 +36,60 @@ características e salvá-los como arquivos DXF. Estes arquivos DXF são
 a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}-1.src -a4
 
 %build
 QTDIR=%{_prefix}; export QTDIR
-%{_bindir}/qmake CONFIG+=thread qcad.pro -o Makefile
-%{__make} \
-	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
-	LDFLAGS="%{rpmldflags}"
+QMAKESPEC=%{_datadir}/qt/mkspecs/linux-g++; export QMAKESPEC
+for i in fparser dxflib; do
+	cd $i
+	%{__autoconf}
+	%configure
+	%{__make} \
+		CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
+		LDFLAGS="%{rpmldflags}"
+	cd ..
+done
+cd qcadcmd
+%{__make} prepare
+cd ..
+for i in qcadlib qcadcmd qcadactions qcadguiqt qcad; do
+	cd $i
+	%{__make} \
+		CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
+		LDFLAGS="%{rpmldflags}"
+	cd ..
+done;
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/qcad} \
 	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
+cwd=`pwd`
+for dir in qcadcmd qcadactions qcadguiqt qcad; do
+	cd $dir/src
+	lrelease *.pro
+	cd ts
+	for tf in *.qm; do
+		ln -sf $cwd/$dir/src/ts/$tf $cwd/qcad/qm/$tf
+	done
+	cd ../../..
+done
+
+cd qcad		
 install qcad $RPM_BUILD_ROOT%{_bindir}
-cp -pR {examples,fonts,hatches,libraries,messages,xpm} $RPM_BUILD_ROOT%{_datadir}/qcad
-ln -sf %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
+cp -LR {examples,fonts,patterns,qm,scripts} $RPM_BUILD_ROOT%{_datadir}/qcad
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
-
-cd $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/* AUTHORS ChangeLog MANIFEST README TODO
+%doc qcad-manual-2.0.0.5-1.xml/*
 %attr(755,root,root) %{_bindir}/qcad
 %{_datadir}/qcad
 %{_desktopdir}/qcad.desktop
