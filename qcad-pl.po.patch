@@ -1,0 +1,20 @@
+--- qcad-1.4.6-src/po/qcad_pl.po.wiget	Sat Feb 24 13:11:05 2001
++++ qcad-1.4.6-src/po/qcad_pl.po	Wed Mar  7 17:13:37 2001
+@@ -2023,7 +2023,7 @@
+ 
+ #: rpreferencesdialog.cpp:509
+ msgid "RPreferencesDialog::Landscape"
+-msgstr "Pionowo"
++msgstr "Poziomo"
+ 
+ #: rpreferencesdialog.cpp:185
+ msgid "RPreferencesDialog::Language"
+@@ -2111,7 +2111,7 @@
+ 
+ #: rpreferencesdialog.cpp:508
+ msgid "RPreferencesDialog::Portrait"
+-msgstr "Poziomo"
++msgstr "Pionowo"
+ 
+ #: rpreferencesdialog.cpp:51
+ msgid "RPreferencesDialog::Preferences"
