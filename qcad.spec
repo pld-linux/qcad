@@ -90,7 +90,7 @@ done
 
 cd qcad		
 install qcad $RPM_BUILD_ROOT%{_bindir}
-cp -LR {examples,fonts,patterns,qm} $RPM_BUILD_ROOT%{_datadir}/qcad
+cp -LR {examples,fonts,patterns,qm,scripts} $RPM_BUILD_ROOT%{_datadir}/qcad
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -108,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qcad/examples
 %{_datadir}/qcad/fonts
 %{_datadir}/qcad/patterns
+%{_datadir}/qcad/scripts
 %dir %{_datadir}/qcad/qm
 %lang(cs) %{_datadir}/qcad/qm/*_cs.qm
 %lang(da) %{_datadir}/qcad/qm/*_da.qm
