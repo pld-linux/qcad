@@ -13,7 +13,7 @@ Source2:	%{name}.png
 Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-2.0.0.5-1.xml.zip
 # Source4-md5:	25717640f5d7d5c231695bf39a8c02ee
 Icon:		qcad.xpm
-URL:		http://www.qcad.org/
+URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
