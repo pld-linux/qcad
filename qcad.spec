@@ -3,14 +3,14 @@ Summary(pl):	Profesjonalny program CAD
 Name:		qcad
 Version:	1.4.6
 Release:	1
-Source0:	http://www.qcad.org/archives/%{name}-%{version}-src.tar.gz
-Patch0:		%{name}-datadir.patch
-Patch1:		%{name}-pl.po.patch
-URL:		http://www.qcad.org
 License:	GPL
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
+Source0:	http://www.qcad.org/archives/%{name}-%{version}-src.tar.gz
+Patch0:		%{name}-datadir.patch
+Patch1:		%{name}-pl.po.patch
+URL:		http://www.qcad.org/
 Requires:	qt >= 2.2
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 2.2
@@ -23,9 +23,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 QCad is a professional CAD System. With QCad you can easily construct
 and change drawings with ISO-text and many other features and save
 them as DXF-files. These DXF-files are the interface to many
-CAD-systems such as AutoCAD® and many others.
+CAD-systems such as AutoCAD(c) and many others.
 
 %description -l pl
+QCad jest profesjonalnym programem CAD. QCad-em mo¿esz prosto
+konstruowaæ i zmieniaæ rysunki i zapisywaæ je w formacie DXF,
+który jest akceptowany przez wiele programów CAD w tym program
+AutoCAD(c).
 
 %prep
 %setup -q -n %{name}-%{version}-src
@@ -40,6 +44,7 @@ CAD-systems such as AutoCAD® and many others.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/qcad,%{_datadir}/qcad}
+
 install qcad $RPM_BUILD_ROOT%{_bindir}
 cp -pR {examples,fonts,hatches,libraries,messages,xpm} $RPM_BUILD_ROOT%{_datadir}/qcad
 ln -s %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
