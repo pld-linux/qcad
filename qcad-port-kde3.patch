@@ -1,0 +1,579 @@
+Common subdirectories: qcad-1.4.16-src.old/CVS and qcad-1.4.16-src/CVS
+diff -u -p qcad-1.4.16-src.old/Makefile qcad-1.4.16-src/Makefile
+--- qcad-1.4.16-src.old/Makefile	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/Makefile	2002-07-06 08:14:42.000000000 +0200
+@@ -14,7 +14,7 @@ CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
+ INCPATH	=	-I$(QTDIR)/include
+ LINK	=	g++
+ LFLAGS	=	-static
+-LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
++LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt-mt -lXext -lX11 -lm
+ MOC	=	$(QTDIR)/bin/moc
+ UIC	=	$(QTDIR)/bin/uic
+ 
+Common subdirectories: qcad-1.4.16-src.old/cur and qcad-1.4.16-src/cur
+Common subdirectories: qcad-1.4.16-src.old/doc and qcad-1.4.16-src/doc
+Common subdirectories: qcad-1.4.16-src.old/examples and qcad-1.4.16-src/examples
+Only in qcad-1.4.16-src/: exprparser.o
+Only in qcad-1.4.16-src/: exprparserfunctions.o
+Common subdirectories: qcad-1.4.16-src.old/fonts and qcad-1.4.16-src/fonts
+Common subdirectories: qcad-1.4.16-src.old/hatches and qcad-1.4.16-src/hatches
+Common subdirectories: qcad-1.4.16-src.old/libraries and qcad-1.4.16-src/libraries
+Only in qcad-1.4.16-src/: main.o
+Only in qcad-1.4.16-src/: measurearea.o
+Common subdirectories: qcad-1.4.16-src.old/messages and qcad-1.4.16-src/messages
+Only in qcad-1.4.16-src/: moc_raboutdialog.cpp
+Only in qcad-1.4.16-src/: moc_raboutdialog.o
+Only in qcad-1.4.16-src/: moc_ractdraw.cpp
+Only in qcad-1.4.16-src/: moc_ractdraw.o
+Only in qcad-1.4.16-src/: moc_ractedit.cpp
+Only in qcad-1.4.16-src/: moc_ractedit.o
+Only in qcad-1.4.16-src/: moc_raction.cpp
+Only in qcad-1.4.16-src/: moc_raction.o
+Only in qcad-1.4.16-src/: moc_ractmeasure.cpp
+Only in qcad-1.4.16-src/: moc_ractmeasure.o
+Only in qcad-1.4.16-src/: moc_racttag.cpp
+Only in qcad-1.4.16-src/: moc_racttag.o
+Only in qcad-1.4.16-src/: moc_ractzoom.cpp
+Only in qcad-1.4.16-src/: moc_ractzoom.o
+Only in qcad-1.4.16-src/: moc_rappwin.cpp
+Only in qcad-1.4.16-src/: moc_rappwin.o
+Only in qcad-1.4.16-src/: moc_rattribdialog.cpp
+Only in qcad-1.4.16-src/: moc_rattribdialog.o
+Only in qcad-1.4.16-src/: moc_rbuttongroup.cpp
+Only in qcad-1.4.16-src/: moc_rbuttongroup.o
+Only in qcad-1.4.16-src/: moc_rcadwidget.cpp
+Only in qcad-1.4.16-src/: moc_rcadwidget.o
+Only in qcad-1.4.16-src/: moc_rcheckbox.cpp
+Only in qcad-1.4.16-src/: moc_rcheckbox.o
+Only in qcad-1.4.16-src/: moc_rchoosemach.cpp
+Only in qcad-1.4.16-src/: moc_rchoosemach.o
+Only in qcad-1.4.16-src/: moc_rcombobox.cpp
+Only in qcad-1.4.16-src/: moc_rcombobox.o
+Only in qcad-1.4.16-src/: moc_rdimdlg.cpp
+Only in qcad-1.4.16-src/: moc_rdimdlg.o
+Only in qcad-1.4.16-src/: moc_rdlgarc.cpp
+Only in qcad-1.4.16-src/: moc_rdlgarc.o
+Only in qcad-1.4.16-src/: moc_rdlgcircle.cpp
+Only in qcad-1.4.16-src/: moc_rdlgcircle.o
+Only in qcad-1.4.16-src/: moc_rdlgline.cpp
+Only in qcad-1.4.16-src/: moc_rdlgline.o
+Only in qcad-1.4.16-src/: moc_rfontdialog.cpp
+Only in qcad-1.4.16-src/: moc_rfontdialog.o
+Only in qcad-1.4.16-src/: moc_rgraphic.cpp
+Only in qcad-1.4.16-src/: moc_rgraphic.o
+Only in qcad-1.4.16-src/: moc_rgroupbox.cpp
+Only in qcad-1.4.16-src/: moc_rgroupbox.o
+Only in qcad-1.4.16-src/: moc_rhatchdialog.cpp
+Only in qcad-1.4.16-src/: moc_rhatchdialog.o
+Only in qcad-1.4.16-src/: moc_rhelpwindow.cpp
+Only in qcad-1.4.16-src/: moc_rhelpwindow.o
+Only in qcad-1.4.16-src/: moc_rinfowidget.cpp
+Only in qcad-1.4.16-src/: moc_rinfowidget.o
+Only in qcad-1.4.16-src/: moc_rinitialdialog.cpp
+Only in qcad-1.4.16-src/: moc_rinitialdialog.o
+Only in qcad-1.4.16-src/: moc_rinputdialog.cpp
+Only in qcad-1.4.16-src/: moc_rinputdialog.o
+Only in qcad-1.4.16-src/: moc_rinputpanel.cpp
+Only in qcad-1.4.16-src/: moc_rinputpanel.o
+Only in qcad-1.4.16-src/: moc_rintro.cpp
+Only in qcad-1.4.16-src/: moc_rintro.o
+Only in qcad-1.4.16-src/: moc_rlabel.cpp
+Only in qcad-1.4.16-src/: moc_rlabel.o
+Only in qcad-1.4.16-src/: moc_rlayerdialog.cpp
+Only in qcad-1.4.16-src/: moc_rlayerdialog.o
+Only in qcad-1.4.16-src/: moc_rlayerwidget.cpp
+Only in qcad-1.4.16-src/: moc_rlayerwidget.o
+Only in qcad-1.4.16-src/: moc_rlibrarybrowser.cpp
+Only in qcad-1.4.16-src/: moc_rlibrarybrowser.o
+Only in qcad-1.4.16-src/: moc_rlibraryitem.cpp
+Only in qcad-1.4.16-src/: moc_rlibraryitem.o
+Only in qcad-1.4.16-src/: moc_rlineedit.cpp
+Only in qcad-1.4.16-src/: moc_rlineedit.o
+Only in qcad-1.4.16-src/: moc_rlistview.cpp
+Only in qcad-1.4.16-src/: moc_rlistview.o
+Only in qcad-1.4.16-src/: moc_rmultilinedit.cpp
+Only in qcad-1.4.16-src/: moc_rmultilinedit.o
+Only in qcad-1.4.16-src/: moc_rparameterdialog.cpp
+Only in qcad-1.4.16-src/: moc_rparameterdialog.o
+Only in qcad-1.4.16-src/: moc_rpreferencesdialog.cpp
+Only in qcad-1.4.16-src/: moc_rpreferencesdialog.o
+Only in qcad-1.4.16-src/: moc_rpushbutton.cpp
+Only in qcad-1.4.16-src/: moc_rpushbutton.o
+Only in qcad-1.4.16-src/: moc_rradiobutton.cpp
+Only in qcad-1.4.16-src/: moc_rradiobutton.o
+Only in qcad-1.4.16-src/: moc_rscrollview.cpp
+Only in qcad-1.4.16-src/: moc_rscrollview.o
+Only in qcad-1.4.16-src/: moc_rsetupedgedecdlg.cpp
+Only in qcad-1.4.16-src/: moc_rsetupedgedecdlg.o
+Only in qcad-1.4.16-src/: moc_rsnap.cpp
+Only in qcad-1.4.16-src/: moc_rsnap.o
+Only in qcad-1.4.16-src/: moc_rstatuspanel.cpp
+Only in qcad-1.4.16-src/: moc_rstatuspanel.o
+Only in qcad-1.4.16-src/: moc_rtoolbar.cpp
+Only in qcad-1.4.16-src/: moc_rtoolbar.o
+Only in qcad-1.4.16-src/: moc_rtoolbutton.cpp
+Only in qcad-1.4.16-src/: moc_rtoolbutton.o
+Only in qcad-1.4.16-src/: moc_rwidget.cpp
+Only in qcad-1.4.16-src/: moc_rwidget.o
+Only in qcad-1.4.16-src/: moc_ryesnodialog.cpp
+Only in qcad-1.4.16-src/: moc_ryesnodialog.o
+Common subdirectories: qcad-1.4.16-src.old/po and qcad-1.4.16-src/po
+Only in qcad-1.4.16-src/: raboutdialog.o
+Only in qcad-1.4.16-src/: ractdraw.o
+Only in qcad-1.4.16-src/: ractedit.o
+Only in qcad-1.4.16-src/: raction.o
+Only in qcad-1.4.16-src/: ractmeasure.o
+Only in qcad-1.4.16-src/: racttag.o
+Only in qcad-1.4.16-src/: ractzoom.o
+Only in qcad-1.4.16-src/: rappwin.o
+Only in qcad-1.4.16-src/: rattribdialog.o
+Only in qcad-1.4.16-src/: rbuttongroup.o
+Only in qcad-1.4.16-src/: rcadwidget.o
+Only in qcad-1.4.16-src/: rcheckbox.o
+Only in qcad-1.4.16-src/: rchoosemach.o
+Only in qcad-1.4.16-src/: rcombobox.o
+diff -u -p qcad-1.4.16-src.old/rconfig.cpp qcad-1.4.16-src/rconfig.cpp
+--- qcad-1.4.16-src.old/rconfig.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rconfig.cpp	2002-07-05 16:45:55.000000000 +0200
+@@ -404,7 +404,7 @@ RConfig::createLanguageList()
+     newLanguage = new languageStruct;
+     newLanguage->name = "English";
+     newLanguage->sign = "en";
+-    newLanguage->charset = QFont::Latin1;
++
+     languageList.append(newLanguage);
+     
+     if (langFile.open(IO_ReadOnly)) {
+@@ -421,7 +421,6 @@ RConfig::createLanguageList()
+             newLanguage = new languageStruct;
+             newLanguage->name = name;
+             newLanguage->sign = sign;
+-            newLanguage->charset = mtStringToCharset(charset);
+ 
+             languageList.append(newLanguage);
+         }
+@@ -458,8 +457,8 @@ RConfig::readQmFile()
+ 
+     // Add charset for this language to the settings
+     if (getSetting("Application:Charset").isEmpty()) {
+-        addSetting("Application:Charset",
+-                   mtCharsetToString(getLanguageCharset(getLanguageName(getSetting("Language:Language")))));
++      //addSetting("Application:Charset",
++      //           mtCharsetToString(getLanguageCharset(getLanguageName(getSetting("Language:Language")))));
+     }
+ 
+     // Ini fonts:
+@@ -467,23 +466,23 @@ RConfig::readQmFile()
+     font0 = new QFont( getSetting("Application:FontName"),
+                        getSettingInt("Application:FontSize0"),
+                        QFont::Normal,
+-                       false,
+-                       mtStringToCharset(getSetting("Application:Charset")) );
++                       false/*,
++			      mtStringToCharset(getSetting("Application:Charset"))*/ );
+     font1 = new QFont( getSetting("Application:FontName"),
+                        getSettingInt("Application:FontSize1"),
+                        QFont::Normal,
+-                       false,
+-                       mtStringToCharset(getSetting("Application:Charset")) );
++                       false/*,
++			      mtStringToCharset(getSetting("Application:Charset"))*/ );
+     font2 = new QFont( getSetting("Application:FontName"),
+                        getSettingInt("Application:FontSize2"),
+                        QFont::Normal,
+-                       false,
+-                       mtStringToCharset(getSetting("Application:Charset")) );
++                       false/*,
++			      mtStringToCharset(getSetting("Application:Charset"))*/ );
+     font3 = new QFont( getSetting("Application:FontName"),
+                        getSettingInt("Application:FontSize3"),
+                        QFont::Normal,
+-                       false,
+-                       mtStringToCharset(getSetting("Application:Charset")) );
++                       false/*,
++			      mtStringToCharset(getSetting("Application:Charset"))*/ );
+ 
+     return true;
+ }
+@@ -560,19 +559,6 @@ RConfig::getLanguageName( QString _langu
+ 
+ 
+ 
+-QFont::CharSet
+-RConfig::getLanguageCharset( QString _languageName )
+-{
+-  languageStruct* ls;
+-  for( ls=languageList.first(); ls!=0; ls=languageList.next() ) {
+-    if( ls->name.lower()==_languageName.lower() ) {
+-      return ls->charset;
+-    }
+-  }
+-
+-  return QFont::Latin1;
+-}
+-
+ 
+ 
+ 
+Only in qcad-1.4.16-src/: rconfig.cpp~
+diff -u -p qcad-1.4.16-src.old/rconfig.h qcad-1.4.16-src/rconfig.h
+--- qcad-1.4.16-src.old/rconfig.h	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rconfig.h	2002-07-05 16:26:27.000000000 +0200
+@@ -63,7 +63,7 @@ public:
+ 
+   QString getLanguageSign( QString _languageName );
+   QString getLanguageName( QString _languageSign );
+-  QFont::CharSet getLanguageCharset( QString _languageName );
++  //QFont::CharSet getLanguageCharset( QString _languageName );
+   int     getLanguageNum();
+   QString getLanguage(int _index);
+ 
+@@ -83,7 +83,7 @@ private:
+   struct languageStruct {      // Struct for a language
+     QString name;              // Name of Language ("English")
+     QString sign;              // Sign of Language ("en")
+-    QFont::CharSet charset;    // Char set of this language (Latin1, Latin2, ...)
++    //QFont::CharSet charset;    // Char set of this language (Latin1, Latin2, ...)
+   };
+   QList<languageStruct> languageList;
+ 
+Only in qcad-1.4.16-src/: rconfig.h~
+Only in qcad-1.4.16-src/: rconfig.o
+Only in qcad-1.4.16-src/: rdimdlg.o
+Only in qcad-1.4.16-src/: rdlgarc.o
+Only in qcad-1.4.16-src/: rdlgarcdata.o
+Only in qcad-1.4.16-src/: rdlgcircle.o
+Only in qcad-1.4.16-src/: rdlgcircledata.o
+Only in qcad-1.4.16-src/: rdlgline.o
+Only in qcad-1.4.16-src/: rdlglinedata.o
+Only in qcad-1.4.16-src/: relement.o
+diff -u -p qcad-1.4.16-src.old/rfile.cpp qcad-1.4.16-src/rfile.cpp
+--- qcad-1.4.16-src.old/rfile.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rfile.cpp	2002-07-05 16:47:30.000000000 +0200
+@@ -255,7 +255,7 @@ fileGetFormatInfo(const QString& _file, 
+             RLOG("\nValue: ");
+             RLOG(fValue);
+             
+-            if(!stricmp(fName, _name)) {
++            if(/*!stricmp(fName, _name)*/!strcmp(fName, _name)) {
+               //strncpy(_value, fValue, _maxLength);
+               ret = fValue;
+               done=true;
+Only in qcad-1.4.16-src/: rfile.cpp~
+Only in qcad-1.4.16-src/: rfile.o
+Only in qcad-1.4.16-src/: rfilebase.o
+Only in qcad-1.4.16-src/: rfilecxf.o
+Only in qcad-1.4.16-src/: rfiledgn.o
+Only in qcad-1.4.16-src/: rfiledxf.o
+Only in qcad-1.4.16-src/: rfileeps.o
+Only in qcad-1.4.16-src/: rfileparser.o
+Only in qcad-1.4.16-src/: rfileplt.o
+Only in qcad-1.4.16-src/: rflags.o
+diff -u -p qcad-1.4.16-src.old/rfontdialog.cpp qcad-1.4.16-src/rfontdialog.cpp
+--- qcad-1.4.16-src.old/rfontdialog.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rfontdialog.cpp	2002-07-05 16:49:49.000000000 +0200
+@@ -648,7 +648,8 @@ RFontDialog::cutText() 
+ void
+ RFontDialog::copyText() 
+ {
+-  meText->copyText();
++  //TODO FIXME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
++  //meText->copyText();
+ }
+ 
+ 
+Only in qcad-1.4.16-src/: rfontdialog.cpp~
+Only in qcad-1.4.16-src/: rfontdialog.o
+Only in qcad-1.4.16-src/: rfonts.o
+diff -u -p qcad-1.4.16-src.old/rgraphic.cpp qcad-1.4.16-src/rgraphic.cpp
+--- qcad-1.4.16-src.old/rgraphic.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rgraphic.cpp	2002-07-05 16:51:00.000000000 +0200
+@@ -24,7 +24,7 @@
+ #include <qfileinfo.h>
+ #include <qpixmap.h>
+ #include <qmessagebox.h>
+-
++#include <qcursor.h>
+ 
+ #include "ractdraw.h"
+ #include "ractedit.h"
+Only in qcad-1.4.16-src/: rgraphic.cpp~
+Only in qcad-1.4.16-src/: rgraphic.o
+Only in qcad-1.4.16-src/: rgroupbox.o
+Only in qcad-1.4.16-src/: rhatchdialog.o
+diff -u -p qcad-1.4.16-src.old/rhelpwindow.cpp qcad-1.4.16-src/rhelpwindow.cpp
+--- qcad-1.4.16-src.old/rhelpwindow.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rhelpwindow.cpp	2002-07-05 16:51:53.000000000 +0200
+@@ -30,7 +30,7 @@
+ #include <qprinter.h>
+ #include <qsimplerichtext.h>
+ #include <qpaintdevicemetrics.h>
+-
++#include <qpainter.h>
+ #include <ctype.h>
+ 
+ #include "xpm/back.xpm"
+@@ -46,8 +46,8 @@ RHelpWindow::RHelpWindow( const QString&
+   browser->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+ 
+   setCentralWidget( browser );
+-  
+-  browser->setLinkColor( QColor("#626993") );
++  //TODO FIXME ///////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
++  //browser->setLinkColor( QColor("#626993") );
+   // Too slow :(
+   //browser->setPaper( QBrush( QColor("#FFFFFF"), QPixmap( tile_xpm )) );
+ 
+Only in qcad-1.4.16-src/: rhelpwindow.cpp~
+Only in qcad-1.4.16-src/: rhelpwindow.o
+Only in qcad-1.4.16-src/: rinfowidget.o
+diff -u -p qcad-1.4.16-src.old/rinitialdialog.cpp qcad-1.4.16-src/rinitialdialog.cpp
+--- qcad-1.4.16-src.old/rinitialdialog.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rinitialdialog.cpp	2002-07-05 16:52:29.000000000 +0200
+@@ -120,8 +120,8 @@ RInitialDialog::accept()
+   RCONFIG->addSetting( "Language:Language",
+                        RCONFIG->getLanguageSign(cbLanguage->currentText()) );
+ 
+-  RCONFIG->addSetting( "Application:Charset",
+-                       mtCharsetToString( RCONFIG->getLanguageCharset( cbLanguage->currentText() ) ) );
++  //RCONFIG->addSetting( "Application:Charset",
++  //                   mtCharsetToString( RCONFIG->getLanguageCharset( cbLanguage->currentText() ) ) );
+ 
+   // CAD:
+   //
+Only in qcad-1.4.16-src/: rinitialdialog.cpp~
+Only in qcad-1.4.16-src/: rinitialdialog.o
+Only in qcad-1.4.16-src/: rinputdialog.o
+Only in qcad-1.4.16-src/: rinputpanel.o
+Only in qcad-1.4.16-src/: rintro.o
+Only in qcad-1.4.16-src/: rlabel.o
+Only in qcad-1.4.16-src/: rlayer.o
+Only in qcad-1.4.16-src/: rlayerdialog.o
+Only in qcad-1.4.16-src/: rlayerwidget.o
+diff -u -p qcad-1.4.16-src.old/rlibrarybrowser.h qcad-1.4.16-src/rlibrarybrowser.h
+--- qcad-1.4.16-src.old/rlibrarybrowser.h	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rlibrarybrowser.h	2002-07-05 16:53:19.000000000 +0200
+@@ -14,7 +14,7 @@
+ #include <qlist.h>
+ 
+ #include "rwidget.h"
+-
++#include <qstringlist.h>
+ class QLabel;
+ class QListViewItem;
+ class QPushButton;
+Only in qcad-1.4.16-src/: rlibrarybrowser.h~
+Only in qcad-1.4.16-src/: rlibrarybrowser.o
+Only in qcad-1.4.16-src/: rlibraryitem.o
+Only in qcad-1.4.16-src/: rlineedit.o
+Only in qcad-1.4.16-src/: rlistboxitem.o
+Only in qcad-1.4.16-src/: rlistview.o
+Only in qcad-1.4.16-src/: rlog.o
+diff -u -p qcad-1.4.16-src.old/rmath.cpp qcad-1.4.16-src/rmath.cpp
+--- qcad-1.4.16-src.old/rmath.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rmath.cpp	2002-07-05 17:07:11.000000000 +0200
+@@ -1035,107 +1035,7 @@ mtGetPageHeightMM( PageFormat _pf )
+ 
+ 
+ 
+-QFont::CharSet
+-mtStringToCharset( const QString &_cs, bool *ok )
+-{
+-  if(ok) *ok=true;
+-
+-  if(_cs=="ISO-8859-1")      return QFont::ISO_8859_1;
+-  if(_cs=="ISO_8859_1")      return QFont::ISO_8859_1;
+-  if(_cs=="Latin1")          return QFont::Latin1;
+-  if(_cs=="AnyCharSet")      return QFont::AnyCharSet;
+-  if(_cs=="ISO-8859-2")      return QFont::ISO_8859_2;
+-  if(_cs=="ISO_8859_2")      return QFont::ISO_8859_2;
+-  if(_cs=="Latin2")          return QFont::Latin2;
+-  if(_cs=="ISO-8859-3")      return QFont::ISO_8859_3;
+-  if(_cs=="ISO_8859_3")      return QFont::ISO_8859_3;
+-  if(_cs=="Latin3")          return QFont::Latin3;
+-  if(_cs=="ISO-8859-4")      return QFont::ISO_8859_4;
+-  if(_cs=="ISO_8859_4")      return QFont::ISO_8859_4;
+-  if(_cs=="Latin4")          return QFont::Latin4;
+-  if(_cs=="ISO-8859-5")      return QFont::ISO_8859_5;
+-  if(_cs=="ISO_8859_5")      return QFont::ISO_8859_5;
+-  if(_cs=="ISO-8859-6")      return QFont::ISO_8859_6;
+-  if(_cs=="ISO_8859_6")      return QFont::ISO_8859_6;
+-  if(_cs=="ISO-8859-7")      return QFont::ISO_8859_7;
+-  if(_cs=="ISO_8859_7")      return QFont::ISO_8859_7;
+-  if(_cs=="ISO-8859-8")      return QFont::ISO_8859_8;
+-  if(_cs=="ISO_8859_8")      return QFont::ISO_8859_8;
+-  if(_cs=="ISO-8859-9")      return QFont::ISO_8859_9;
+-  if(_cs=="ISO_8859_9")      return QFont::ISO_8859_9;
+-  if(_cs=="Latin5")          return QFont::Latin5;
+-  if(_cs=="ISO-8859-10")     return QFont::ISO_8859_10;
+-  if(_cs=="ISO_8859_10")     return QFont::ISO_8859_10;
+-  if(_cs=="Latin6")          return QFont::Latin6;
+-  if(_cs=="ISO-8859-11")     return QFont::ISO_8859_11;
+-  if(_cs=="ISO_8859_11")     return QFont::ISO_8859_11;
+-  if(_cs=="ISO-8859-12")     return QFont::ISO_8859_12;
+-  if(_cs=="ISO_8859_12")     return QFont::ISO_8859_12;
+-  if(_cs=="ISO-8859-13")     return QFont::ISO_8859_13;
+-  if(_cs=="ISO_8859_13")     return QFont::ISO_8859_13;
+-  if(_cs=="Latin7")          return QFont::Latin7;
+-  if(_cs=="ISO-8859-14")     return QFont::ISO_8859_14;
+-  if(_cs=="ISO_8859_14")     return QFont::ISO_8859_14;
+-  if(_cs=="Latin8")          return QFont::Latin8;
+-  if(_cs=="ISO-8859-15")     return QFont::ISO_8859_15;
+-  if(_cs=="ISO_8859_15")     return QFont::ISO_8859_15;
+-  if(_cs=="Latin9")          return QFont::Latin9;
+-  if(_cs=="KOI8R")           return QFont::KOI8R;
+-  if(_cs=="KOI8-R")          return QFont::KOI8R;
+-  if(_cs=="Set-Ja")          return QFont::Set_Ja;
+-  if(_cs=="Set_Ja")          return QFont::Set_Ja;
+-  if(_cs=="Set-1")           return QFont::Set_1;
+-  if(_cs=="Set_1")           return QFont::Set_1;
+-  if(_cs=="Set-Ko")          return QFont::Set_Ko;
+-  if(_cs=="Set_Ko")          return QFont::Set_Ko;
+-  if(_cs=="Set-Th-TH")       return QFont::Set_Th_TH;
+-  if(_cs=="Set_Th_TH")       return QFont::Set_Th_TH;
+-  if(_cs=="Set-Zh")          return QFont::Set_Zh;
+-  if(_cs=="Set_Zh")          return QFont::Set_Zh;
+-  if(_cs=="Set-Zh-TW")       return QFont::Set_Zh_TW;
+-  if(_cs=="Set_Zh_TW")       return QFont::Set_Zh_TW;
+-  if(_cs=="Set-N")           return QFont::Set_N;
+-  if(_cs=="Set_N")           return QFont::Set_N;
+-  if(_cs=="Unicode")         return QFont::Unicode;
+-
+-  if(ok) *ok=false;
+-  return QFont::ISO_8859_1;
+-}
+-
+-
+ 
+-QString
+-mtCharsetToString( QFont::CharSet _cs )
+-{
+-  switch( _cs ) {
+-    default:
+-    case QFont::AnyCharSet:        return "AnyCharSet";
+-    case QFont::ISO_8859_1:        return "ISO-8859-1";
+-    case QFont::ISO_8859_2:        return "ISO-8859-2";
+-    case QFont::ISO_8859_3:        return "ISO-8859-3";
+-    case QFont::ISO_8859_4:        return "ISO-8859-4";
+-    case QFont::ISO_8859_5:        return "ISO-8859-5";
+-    case QFont::ISO_8859_6:        return "ISO-8859-6";
+-    case QFont::ISO_8859_7:        return "ISO-8859-7";
+-    case QFont::ISO_8859_8:        return "ISO-8859-8";
+-    case QFont::ISO_8859_9:        return "ISO-8859-9";
+-    case QFont::ISO_8859_10:       return "ISO-8859-10";
+-    case QFont::ISO_8859_11:       return "ISO-8859-11";
+-    case QFont::ISO_8859_12:       return "ISO-8859-12";
+-    case QFont::ISO_8859_13:       return "ISO-8859-13";
+-    case QFont::ISO_8859_14:       return "ISO-8859-14";
+-    case QFont::ISO_8859_15:       return "ISO-8859-15";
+-    case QFont::KOI8R:             return "KOI8-R";
+-    case QFont::Set_Ja:            return "Set-Ja";
+-    case QFont::Set_Ko:            return "Set-Ko";
+-    case QFont::Set_Th_TH:         return "Set-Th-TH";
+-    case QFont::Set_Zh:            return "Set-Zh";
+-    case QFont::Set_Zh_TW:         return "Set-Zh-TW";
+-    case QFont::Unicode:           return "Unicode";
+-  }
+-
+-  return "ISO-8859-1";
+-}
+ 
+ 
+ /** Calculates a mathematical expression using the
+Only in qcad-1.4.16-src/: rmath.cpp~
+diff -u -p qcad-1.4.16-src.old/rmath.h qcad-1.4.16-src/rmath.h
+--- qcad-1.4.16-src.old/rmath.h	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rmath.h	2002-07-05 16:25:45.000000000 +0200
+@@ -75,8 +75,8 @@ QString     mtPageFormatToString( PageFo
+ double      mtGetPageWidthMM( PageFormat _pf );
+ double      mtGetPageHeightMM( PageFormat _pf );
+ 
+-QFont::CharSet mtStringToCharset( const QString &_cs, bool *ok=0 );
+-QString     mtCharsetToString( QFont::CharSet _cs );
++//QFont::CharSet mtStringToCharset( const QString &_cs, bool *ok=0 );
++//QString     mtCharsetToString( QFont::CharSet _cs );
+ 
+ double      mtCalculate( const QString &_expression, double _default=0.0, bool *_ok=0 );
+ double      mtGetMM( double _v, Unit _unit );
+Only in qcad-1.4.16-src/: rmath.h~
+Only in qcad-1.4.16-src/: rmath.o
+diff -u -p qcad-1.4.16-src.old/rmultilinedit.cpp qcad-1.4.16-src/rmultilinedit.cpp
+--- qcad-1.4.16-src.old/rmultilinedit.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rmultilinedit.cpp	2002-07-05 17:32:29.000000000 +0200
+@@ -153,7 +153,8 @@ RMultiLineEdit::saveFile()
+ void
+ RMultiLineEdit::resizeEvent(QResizeEvent *_ev)
+ {
+-  QTableView::resizeEvent( _ev );
++  //FIXEM /§§§§§§§§§§§§§§§§§§§§§§§§§§§
++  //QTableView::resizeEvent( _ev );
+ }
+ 
+ 
+Only in qcad-1.4.16-src/: rmultilinedit.cpp~
+Only in qcad-1.4.16-src/: rmultilinedit.o
+Only in qcad-1.4.16-src/: rpainter.o
+Only in qcad-1.4.16-src/: rparameterdialog.o
+diff -u -p qcad-1.4.16-src.old/rpreferencesdialog.cpp qcad-1.4.16-src/rpreferencesdialog.cpp
+--- qcad-1.4.16-src.old/rpreferencesdialog.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rpreferencesdialog.cpp	2002-07-05 17:36:48.000000000 +0200
+@@ -1167,7 +1167,7 @@ RPreferencesDialog::slotPageFormatChange
+ void
+ RPreferencesDialog::slotLanguageChanged(const QString &)
+ {
+-  cbCharset->setEditText( mtCharsetToString( RCONFIG->getLanguageCharset( cbLanguage->currentText() ) ) );
++  //cbCharset->setEditText( mtCharsetToString( RCONFIG->getLanguageCharset( cbLanguage->currentText() ) ) );
+ }
+ 
+ 
+Only in qcad-1.4.16-src/: rpreferencesdialog.cpp~
+Only in qcad-1.4.16-src/: rpreferencesdialog.o
+Only in qcad-1.4.16-src/: rpushbutton.o
+Only in qcad-1.4.16-src/: rradiobutton.o
+Only in qcad-1.4.16-src/: rscrollview.o
+Only in qcad-1.4.16-src/: rsettings.o
+Only in qcad-1.4.16-src/: rsetupedgedecdlg.o
+Only in qcad-1.4.16-src/: rsnap.o
+Only in qcad-1.4.16-src/: rsplitter.o
+Only in qcad-1.4.16-src/: rstatuspanel.o
+Only in qcad-1.4.16-src/: rstring.o
+Only in qcad-1.4.16-src/: rtabbar.o
+diff -u -p qcad-1.4.16-src.old/rtoolbar.cpp qcad-1.4.16-src/rtoolbar.cpp
+--- qcad-1.4.16-src.old/rtoolbar.cpp	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rtoolbar.cpp	2002-07-06 08:14:12.000000000 +0200
+@@ -26,11 +26,11 @@
+ // Constructor:
+ //
+ RToolBar::RToolBar(const QString& _label, QMainWindow *_parent,
+-                   QMainWindow::ToolBarDock _dock, 
++                   /*QMainWindow::ToolBarDock _dock,*/
+                    bool _newLine,
+                    const char* _name)
+-:QToolBar(_label, _parent, 
+-          _dock,
++  :QToolBar(_label, _parent, _parent,
++          /*_dock,*/
+           _newLine, _name)
+ {
+   
+Only in qcad-1.4.16-src/: rtoolbar.cpp~
+diff -u -p qcad-1.4.16-src.old/rtoolbar.h qcad-1.4.16-src/rtoolbar.h
+--- qcad-1.4.16-src.old/rtoolbar.h	2002-07-02 19:54:03.000000000 +0200
++++ qcad-1.4.16-src/rtoolbar.h	2002-07-06 08:12:27.000000000 +0200
+@@ -34,7 +34,7 @@ public:
+       \param _name Name
+   */
+   RToolBar(const QString& _label, QMainWindow* _parent,
+-           QMainWindow::ToolBarDock _dock= QMainWindow::Top, 
++           /*QMainWindow::ToolBarDock _dock= QMainWindow::Top,*/ 
+            bool _newLine = false,
+            const char* _name=0);
+   /*! Destructor
+Only in qcad-1.4.16-src/: rtoolbar.h~
+Only in qcad-1.4.16-src/: rtoolbar.o
+Only in qcad-1.4.16-src/: rtoolbutton.o
+Only in qcad-1.4.16-src/: rwidget.o
+Only in qcad-1.4.16-src/: ryesnodialog.o
+Common subdirectories: qcad-1.4.16-src.old/templates and qcad-1.4.16-src/templates
+Common subdirectories: qcad-1.4.16-src.old/xpm and qcad-1.4.16-src/xpm
