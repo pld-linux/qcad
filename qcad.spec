@@ -10,8 +10,8 @@ Source0:	http://www.ribbonsoft.com/archives/qcad/%{name}-%{version}-1.src.tar.gz
 # Source0-md5:	31a809a339813d8b2e4ead7a2ca8f81c
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Source3:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-de-2.0.1.3-1.html.zip
-# Source3-md5:	78bfef9f9295899e1534b24469a8a40e
+Source3:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-de-2.0.3.3-1.html.zip
+# Source3-md5:	338f33df5e09a9f7395473a39618bcfd
 Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-en-2.0.1.3-1.html.zip
 # Source4-md5:	4c9e3c08e4b0b9e41eef2fdcc0e8af41
 Source5:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-2.0.1.4-2.html.zip
@@ -101,7 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc qcad-manual-en-2.0.1.3-1.html
-%lang(de) %doc qcad-manual-de-2.0.1.3-1.html
+%lang(de) %doc qcad-manual-de-2.0.3.3-1.html
 %lang(hu) %doc qcad-manual-hu-2.0.1.4-2.html
 %attr(755,root,root) %{_bindir}/qcad
 %dir %{_datadir}/qcad
