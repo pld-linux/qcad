@@ -1,16 +1,16 @@
---- qcad-1.4.12-src/Makefile.orig	Mon May 20 13:04:24 2002
-+++ qcad-1.4.12-src/Makefile	Mon May 20 21:51:26 2002
+--- ./Makefile.org	Sat Jul 27 18:08:16 2002
++++ ./Makefile	Sat Jul 27 18:25:11 2002
 @@ -11,10 +11,10 @@
  CXX	=	g++
  CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
  CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
 -INCPATH	=	-I$(QTDIR)/include
-+INCPATH	=	-I/usr/X11R6/include -I/usr/X11R6/include/qt
++INCPATH	=	-I$(QTDIR)/include -I/usr/X11R6/include/qt -I/usr/X11R6/include
  LINK	=	g++
 -LFLAGS	=	-static
--LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
-+LFLAGS	=
-+LIBS	=	$(SUBLIBS) -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
+-LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt-mt -lXext -lX11 -lm
++LFLAGS	=	
++LIBS	=	$(SUBLIBS) -L/usr/X11R6/lib -L/usr/X11R6/lib/qt/plugins-mt/styles/ -lqt-mt -lqwindowsstyle -lXext -lX11 -lm
  MOC	=	$(QTDIR)/bin/moc
  UIC	=	$(QTDIR)/bin/uic
  
