@@ -3,7 +3,7 @@ Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
 Version:	1.4.16
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://telia.dl.sourceforge.net/sourceforge/qcad/%{name}-%{version}-src.tar.gz
@@ -11,10 +11,11 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-pl.po.patch
-Patch2:		%{name}-Makefile.patch
+Patch2:		%{name}-port-kde3.patch
+Patch3:		%{name}-Makefile.patch
 Icon:		qcad.xpm
 URL:		http://www.qcad.org/
-Requires:	qt >= 2.2
+Requires:	qt >= 3
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 2.2
 #BuildRequires:	tmake >= 1.7-2
@@ -44,6 +45,7 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__make} \
