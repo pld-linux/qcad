@@ -48,13 +48,13 @@ QTDIR=%{_prefix}; export QTDIR
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/qcad} \
-	$RPM_BUILD_ROOT{%{_applnkdir}/Graphics,%{_pixmapsdir}}
+	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 install qcad $RPM_BUILD_ROOT%{_bindir}
 cp -pR {examples,fonts,hatches,libraries,messages,xpm} $RPM_BUILD_ROOT%{_datadir}/qcad
 ln -sf %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 cd $RPM_BUILD_ROOT
@@ -67,5 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/* AUTHORS ChangeLog MANIFEST README TODO
 %attr(755,root,root) %{_bindir}/qcad
 %{_datadir}/qcad
-%{_applnkdir}/Graphics/*
-%{_pixmapsdir}/*
+%{_desktopdir}/qcad.desktop
+%{_pixmapsdir}/qcad.png
