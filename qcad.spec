@@ -9,7 +9,7 @@ URL:		http://www.qcad.org
 License:	GPL
 Group:		X11/Applications/Graphics
 ######		Unknown group!
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	qt2
 BuildPreReq:	XFree86-devel, qt2-devel
 
