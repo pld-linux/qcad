@@ -2,7 +2,7 @@ Summary:	a professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Name:		qcad
 Version:	1.4.7
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
@@ -37,15 +37,15 @@ AutoCAD(c).
 
 %prep
 %setup -q -n %{name}-%{version}-src
-#%patch0 -p1
+%patch0 -p1
 %patch1 -p1
 %patch2 -p0
 
 %build
 %{__make} \
-	CXXFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g} \
-	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
+	CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g} \
 	-fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
+	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
 	LDFLAGS="" qcad
 
 %install
