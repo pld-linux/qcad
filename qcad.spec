@@ -2,7 +2,7 @@ Summary:	a professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Name:		qcad
 Version:	1.4.7
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.qcad.org/archives/%{name}-%{version}-src.tar.gz
