@@ -3,7 +3,7 @@ Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
 Version:	1.5.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://prdownloads.sourceforge.net/qcad/%{name}-%{version}-src.tar.gz
@@ -61,6 +61,11 @@ ln -sf %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+
+cd $RPM_BUILD_ROOT
+rm -rf `find . -name CVS`
+cd -
+rm -rf doc/en/{CVS,img/CVS}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
