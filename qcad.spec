@@ -12,12 +12,13 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-pl.po.patch
+Patch2:		%{name}-Makefile.patch
 Icon:		qcad.xpm
 URL:		http://www.qcad.org/
 Requires:	qt >= 2.2
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 2.2
-BuildRequires:	tmake >= 1.7-2
+#BuildRequires:	tmake >= 1.7-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -36,14 +37,16 @@ AutoCAD(c).
 
 %prep
 %setup -q -n %{name}-%{version}-src
-%patch0 -p1
+#%patch0 -p1
 %patch1 -p1
+%patch2 -p0
 
 %build
 %{__make} \
 	CXXFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g} \
+	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
 	-fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
-	LDFLAGS=""
+	LDFLAGS="" qcad
 
 %install
 rm -rf $RPM_BUILD_ROOT
