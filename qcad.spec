@@ -98,6 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qcad/patterns
 %{_datadir}/qcad/scripts
 %dir %{_datadir}/qcad/qm
+%lang(cs) %{_datadir}/qcad/qm/*_cs.qm
 %lang(da) %{_datadir}/qcad/qm/*_da.qm
 %lang(de) %{_datadir}/qcad/qm/*_de.qm
 %lang(el) %{_datadir}/qcad/qm/*_el.qm
