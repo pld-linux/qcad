@@ -10,7 +10,7 @@ Source0:	http://prdownloads.sourceforge.net/qcad/%{name}-%{version}-src.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch1:		%{name}-Makefile.patch
-Patch2: 	%{name}-lib.patch
+Patch2:		%{name}-lib.patch
 Icon:		qcad.xpm
 URL:		http://www.qcad.org/
 BuildRequires:	XFree86-devel
@@ -42,10 +42,10 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 %patch2 -p1
 
 %build
-QTDIR="/usr/X11R6"
+QTDIR="%{_prefix}"
 export QTDIR
 %{__make} \
-	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
+	INCPATH="-I%{_includedir} -I%{_includedir}/qt" \
 	QMAKE_CONF="%{_datadir}/qt/mkspecs/linux-g++/qmake.conf" \
 	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
 	LDFLAGS="%{rpmldflags}" qcad
