@@ -7,6 +7,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/qcad/%{name}-%{version}-src.tar.gz
+# Source0-md5:	73964f6fd23780b2d83de508203617bd
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-lib.patch
