@@ -3,8 +3,8 @@ Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
 Version:	1.4.16
-Release:	2
-License:	GPL
+Release:	3
+License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://telia.dl.sourceforge.net/sourceforge/qcad/%{name}-%{version}-src.tar.gz
 Source1:	%{name}.desktop
