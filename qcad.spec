@@ -2,21 +2,19 @@ Summary:	a professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	1.5.1
-Release:	2
+Version:	1.5.4
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://prdownloads.sourceforge.net/qcad/%{name}-%{version}-src.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch1:		%{name}-Makefile.patch
-Patch2:		%{name}-lib.patch
+Patch0:		%{name}-lib.patch
 Icon:		qcad.xpm
 URL:		http://www.qcad.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 QCad is a professional CAD System. With QCad you can easily construct
@@ -36,22 +34,19 @@ características e salvá-los como arquivos DXF. Estes arquivos DXF são
 a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
-%setup -q -n %{name}-%{version}-src
-%patch1 -p1
-%patch2 -p1
+%setup -q
+%patch0 -p1
 
 %build
-QTDIR="%{_prefix}"
-export QTDIR
+QTDIR=%{_prefix}; export QTDIR
+%{_bindir}/qmake qcad.pro -o Makefile
 %{__make} \
-	INCPATH="-I%{_includedir} -I%{_includedir}/qt" \
-	QMAKE_CONF="%{_datadir}/qt/mkspecs/linux-g++/qmake.conf" \
 	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
-	LDFLAGS="%{rpmldflags}" qcad
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/qcad,%{_datadir}/qcad} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/qcad} \
 	$RPM_BUILD_ROOT{%{_applnkdir}/Graphics,%{_pixmapsdir}}
 
 install qcad $RPM_BUILD_ROOT%{_bindir}
@@ -62,16 +57,13 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 cd $RPM_BUILD_ROOT
-rm -rf `find . -name CVS`
-cd -
-rm -rf doc/en/{CVS,img/CVS}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/* AUTHORS README MANIFEST changes-* TODO
+%doc doc/* AUTHORS ChangeLog MANIFEST README TODO
 %attr(755,root,root) %{_bindir}/qcad
 %{_datadir}/qcad
 %{_applnkdir}/Graphics/*
