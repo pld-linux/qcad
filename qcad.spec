@@ -17,7 +17,7 @@ Icon:		qcad.xpm
 URL:		http://www.qcad.org/
 Requires:	qt >= 3
 BuildRequires:	XFree86-devel
-BuildRequires:	qt-devel >= 2.2
+BuildRequires:	qt-devel >= 3.0.5
 #BuildRequires:	tmake >= 1.7-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
