@@ -39,7 +39,7 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %build
 QTDIR=%{_prefix}; export QTDIR
-%{_bindir}/qmake qcad.pro -o Makefile
+%{_bindir}/qmake CONFIG+=thread qcad.pro -o Makefile
 %{__make} \
 	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
 	LDFLAGS="%{rpmldflags}"
