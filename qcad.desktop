@@ -7,5 +7,5 @@ Icon=qcad.png
 Exec=qcad
 Terminal=false
 Type=Application
-Categories=Qt;Graphics
+Categories=Qt;Graphics;
 # vi: encoding=utf-8
