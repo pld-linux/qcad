@@ -1,10 +1,11 @@
 Summary:	a professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Name:		qcad
-Version:	1.4.4
+Version:	1.4.6
 Release:	1
 Source0:	http://www.qcad.org/archives/%{name}-%{version}-src.tar.gz
 Patch0:		%{name}-datadir.patch
+Patch1:		%{name}-pl.po.patch
 URL:		http://www.qcad.org
 License:	GPL
 Group:		X11/Applications/Graphics
@@ -13,6 +14,7 @@ Group(pl):	X11/Aplikacje/Grafika
 Requires:	qt >= 2.2
 BuildRequires:	XFree86-devel
 BuildRequires:	qt-devel >= 2.2
+BuildRequires:	tmake >= 1.7-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_prefix /usr/X11R6
@@ -28,12 +30,12 @@ CAD-systems such as AutoCAD® and many others.
 %prep
 %setup -q -n %{name}-%{version}-src
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
-	CFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
-	QTDIR="%{_prefix}" \
-	LFLAGS=""
+	CXXFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g} -fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
+	LDFLAGS=""
 
 %install
 rm -rf $RPM_BUILD_ROOT
