@@ -46,23 +46,23 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 %build
 QTDIR=%{_prefix}; export QTDIR
 QMAKESPEC=%{_datadir}/qt/mkspecs/linux-g++; export QMAKESPEC
+CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 for i in fparser dxflib; do
 	cd $i
 	%{__autoconf}
 	%configure
-	%{__make} \
-		CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
-		LDFLAGS="%{rpmldflags}"
+	%{__make}
 	cd ..
 done
 cd qcadcmd
 %{__make} prepare
 cd ..
 for i in qcadlib qcadcmd qcadactions qcadguiqt qcad; do
-	cd $i
-	%{__make} \
-		CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
-		LDFLAGS="%{rpmldflags}"
+	cd $i/src
+	qmake *.pro \
+		QMAKE_CXXFLAGS_RELEASE="$CXXFLAGS"
+	cd ..
+	%{__make}
 	cd ..
 done;
 
@@ -109,11 +109,14 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/qcad/qm/*_de.qm
 %lang(el) %{_datadir}/qcad/qm/*_el.qm
 %{_datadir}/qcad/qm/*_en.qm
+%lang(es) %{_datadir}/qcad/qm/*_es.qm
+%lang(et) %{_datadir}/qcad/qm/*_et.qm
 %lang(fr) %{_datadir}/qcad/qm/*_fr.qm
 %lang(hu) %{_datadir}/qcad/qm/*_hu.qm
 %lang(it) %{_datadir}/qcad/qm/*_it.qm
 %lang(nl) %{_datadir}/qcad/qm/*_nl.qm
 %lang(nb) %{_datadir}/qcad/qm/*_no.qm
+%lang(pl) %{_datadir}/qcad/qm/*_pl.qm
 %lang(ru) %{_datadir}/qcad/qm/*_ru.qm
 %lang(sk) %{_datadir}/qcad/qm/*_sk.qm
 %lang(tr) %{_datadir}/qcad/qm/*_tr.qm
