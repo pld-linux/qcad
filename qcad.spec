@@ -20,6 +20,7 @@ Icon:		qcad.xpm
 URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	qt-devel >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,6 +50,7 @@ QMAKESPEC=%{_datadir}/qt/mkspecs/linux-g++; export QMAKESPEC
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 for i in fparser dxflib; do
 	cd $i
+	cp -f /usr/share/automake/config.* .
 	%{__autoconf}
 	%configure
 	%{__make}
