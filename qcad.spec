@@ -47,9 +47,9 @@ export QTDIR
 %{__make} \
 	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
 	QMAKE_CONF="%{_datadir}/qt/mkspecs/linux-g++/qmake.conf" \
+	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
 	LDFLAGS="%{rpmldflags}" qcad
 
-#	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DQT_NO_DEBUG}" \
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/qcad,%{_datadir}/qcad} \
