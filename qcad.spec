@@ -1,8 +1,9 @@
 Summary:	a professional CAD system
 Summary(pl):	Profesjonalny program CAD
+Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	1.4.7
-Release:	3
+Version:	1.4.12
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.qcad.org/archives/%{name}-%{version}-src.tar.gz
@@ -29,20 +30,26 @@ CAD-systems such as AutoCAD(c) and many others.
 
 %description -l pl
 QCad jest profesjonalnym programem CAD. QCad-em mo¿esz prosto
-konstruowaæ i zmieniaæ rysunki i zapisywaæ je w formacie DXF,
-który jest akceptowany przez wiele programów CAD w tym program
-AutoCAD(c).
+konstruowaæ i zmieniaæ rysunki i zapisywaæ je w formacie DXF, który
+jest akceptowany przez wiele programów CAD w tym program AutoCAD(c).
+
+%description -l pt_BR
+O QCad é um sistema profissional de CAD. Com ele você pode facilmente
+construir e mudar desenhos com textos ISO e muitas outras
+características e salvá-los como arquivos DXF. Estes arquivos DXF são
+a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
 %setup -q -n %{name}-%{version}-src
 %patch0 -p1
 %patch1 -p1
-%patch2 -p0
+%patch2 -p1
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
+	CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions %{!?debug:-DNO_DEBUG} -DDATADIR=\\\"%{_datadir}/\\\"" \
 	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
+	MOC="moc" \
 	LDFLAGS="%{rpmldflags}" qcad
 
 %install
@@ -57,14 +64,12 @@ ln -sf %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf AUTHORS README MANIFEST changes-* TODO 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/* *.gz 
+%doc doc/* AUTHORS README MANIFEST changes-* TODO
 %attr(755,root,root) %{_bindir}/qcad
 %{_datadir}/qcad
 %{_applnkdir}/Graphics/*
