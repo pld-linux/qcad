@@ -106,6 +106,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_datadir}/qcad/qm/*_fr.qm
 %lang(hu) %{_datadir}/qcad/qm/*_hu.qm
 %lang(it) %{_datadir}/qcad/qm/*_it.qm
-%lang(no) %{_datadir}/qcad/qm/*_no.qm
+%lang(nb) %{_datadir}/qcad/qm/*_no.qm
 %{_desktopdir}/qcad.desktop
 %{_pixmapsdir}/qcad.png
