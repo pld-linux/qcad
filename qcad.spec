@@ -2,12 +2,12 @@ Summary:	A professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	2.0.1.2
-Release:	0.1
+Version:	2.0.1.3
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://www.ribbonsoft.com/archives/qcad/%{name}-%{version}-1.src.tar.gz
-# Source0-md5:	9c51cd1ddeb600f455e15de9ab93f9d3
+# Source0-md5:	480c0a67e37ed57d14e67d2977db8cff
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-2.0.0.5-1.xml.zip
