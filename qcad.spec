@@ -43,10 +43,9 @@ AutoCAD(c).
 
 %build
 %{__make} \
-	CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g} \
-	-fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
+	CFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -DDATADIR=\\\"%{_datadir}/\\\"" \
 	INCPATH="-I/usr/X11R6/include -I/usr/X11R6/include/qt" \
-	LDFLAGS="" qcad
+	LDFLAGS="%{rpmldflags}" qcad
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -55,7 +54,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/qcad,%{_datadir}/qcad} \
 
 install qcad $RPM_BUILD_ROOT%{_bindir}
 cp -pR {examples,fonts,hatches,libraries,messages,xpm} $RPM_BUILD_ROOT%{_datadir}/qcad
-ln -s %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
+ln -sf %{_docdir}/%{name}-%{version} $RPM_BUILD_ROOT%{_datadir}/qcad/doc
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
