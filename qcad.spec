@@ -35,7 +35,7 @@ them as DXF-files. These DXF-files are the interface to many
 CAD-systems such as AutoCAD(c) and many others.
 
 %description -l pl
-QCad jest profesjonalnym programem CAD. QCad-em mo¿esz prosto
+QCad jest profesjonalnym programem CAD. QCadem mo¿na prosto
 konstruowaæ i zmieniaæ rysunki i zapisywaæ je w formacie DXF, który
 jest akceptowany przez wiele programów CAD w tym program AutoCAD(c).
 
