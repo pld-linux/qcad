@@ -17,7 +17,6 @@ Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-en-2.0.1.3-1.htm
 # Source4-md5:	4c9e3c08e4b0b9e41eef2fdcc0e8af41
 Source5:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-2.0.1.4-2.html.zip
 # Source5-md5:	978358eff7246dad3b5e94fc4d346552
-Icon:		qcad.xpm
 URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
