@@ -89,7 +89,7 @@ for dir in qcadcmd qcadactions qcadguiqt qcad; do
 done
 
 cp -LR scripts $RPM_BUILD_ROOT%{_datadir}/qcad
-cd qcad		
+cd qcad
 install qcad $RPM_BUILD_ROOT%{_bindir}
 cp -LR {examples,fonts,patterns,qm} $RPM_BUILD_ROOT%{_datadir}/qcad
 
