@@ -1,0 +1,22 @@
+--- qcad-2.0.4.0-1.src/qcadlib/src/engine/rs_entity.cpp.orig	2004-09-14 22:13:02.000000000 +0200
++++ qcad-2.0.4.0-1.src/qcadlib/src/engine/rs_entity.cpp	2006-04-17 13:29:17.000000000 +0200
+@@ -849,7 +849,7 @@
+         os << " layer: NULL ";
+     } else {
+         os << " layer: " << e.layer->getName().latin1() << " ";
+-        os << " layer address: " << (int)(e.layer) << " ";
++        os << " layer address: " << (ptrdiff_t)(e.layer) << " ";
+     }
+ 
+     os << e.pen << "\n";
+--- qcad-2.0.4.0-1.src/qcadlib/src/engine/rs_layer.cpp.orig	2004-09-14 22:13:02.000000000 +0200
++++ qcad-2.0.4.0-1.src/qcadlib/src/engine/rs_layer.cpp	2006-04-17 13:30:14.000000000 +0200
+@@ -57,7 +57,7 @@
+     os << " name: " << l.getName().latin1()
+     << " pen: " << l.getPen()
+ 	<< " frozen: " << (int)l.isFrozen()
+-	<< " address: " << (int)(&l)
++	<< " address: " << (ptrdiff_t)(&l)
+     << std::endl;
+     return os;
+ }
