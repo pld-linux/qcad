@@ -17,6 +17,7 @@ Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-en-2.0.1.3-1.htm
 # Source4-md5:	4c9e3c08e4b0b9e41eef2fdcc0e8af41
 Source5:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-2.0.1.4-2.html.zip
 # Source5-md5:	978358eff7246dad3b5e94fc4d346552
+Patch0:		%{name}-gcc4.patch
 URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	autoconf
@@ -46,6 +47,7 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
 %setup -q -n %{name}-%{version}-1.src -a3 -a4 -a5
+%patch0 -p1
 
 %build
 QTDIR=%{_prefix}; export QTDIR
