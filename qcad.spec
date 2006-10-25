@@ -1,22 +1,31 @@
+# TODO:
+# - separate language packages
+# - manual supbackage (languaged?)
+%define		_csver		2.0.4.0-1
+%define		_dever		2.0.4.0-1
+%define		_enver		2.0.4.0-1
+%define		_huver		2.0.4.0-1
 Summary:	A professional CAD system
 Summary(pl):	Profesjonalny program CAD
 Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
-Version:	2.0.4.0
-Release:	3
+Version:	2.0.5.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Graphics
 #Source0Download: http://www.ribbonsoft.com/qcad_downloads.html
-Source0:	http://www.ribbonsoft.com/archives/qcad/%{name}-%{version}-1.src.tar.gz
-# Source0-md5:	d99ae2855029af21f544e302a60d6840
+Source0:	http://www.ribbonsoft.com/archives/qcad/%{name}-%{version}-1-community.src.tar.gz
+# Source0-md5:	96b6a56027782aec953c9c4e64c5998c
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Source3:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-de-2.0.3.3-1.html.zip
-# Source3-md5:	338f33df5e09a9f7395473a39618bcfd
-Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-en-2.0.1.3-1.html.zip
-# Source4-md5:	4c9e3c08e4b0b9e41eef2fdcc0e8af41
-Source5:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-2.0.1.4-2.html.zip
-# Source5-md5:	978358eff7246dad3b5e94fc4d346552
+Source3:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-cs-%{_csver}.html.zip
+# Source3-md5:	45b444d58761b7a4074ca231f46d04fa
+Source4:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-de-%{_dever}.html.zip
+# Source4-md5:	71aba8cfd5dc521bd96454c46dafcb2c
+Source5:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-en-%{_enver}.html.zip
+# Source5-md5:	20d8fddbe0da978f996bdfaf9ae6bec1
+Source6:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-%{_huver}.html.zip
+# Source6-md5:	56c94d907761d4affa00c029f52fe96d
 Patch0:		%{name}-gcc4.patch
 URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	xorg-lib-libX11-devel
@@ -46,7 +55,7 @@ características e salvá-los como arquivos DXF. Estes arquivos DXF são
 a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
-%setup -q -n %{name}-%{version}-1.src -a3 -a4 -a5
+%setup -q -n %{name}-%{version}-1-community.src -a3 -a4 -a5 -a6
 %patch0 -p1
 
 %build
@@ -93,7 +102,7 @@ done
 cp -LR scripts $RPM_BUILD_ROOT%{_datadir}/qcad
 cd qcad
 install qcad $RPM_BUILD_ROOT%{_bindir}
-cp -LR {examples,fonts,patterns,qm} $RPM_BUILD_ROOT%{_datadir}/qcad
+cp -LR {fonts,patterns,qm} $RPM_BUILD_ROOT%{_datadir}/qcad
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -103,12 +112,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc qcad-manual-en-2.0.1.3-1.html
-%lang(de) %doc qcad-manual-de-2.0.3.3-1.html
-%lang(hu) %doc qcad-manual-hu-2.0.1.4-2.html
+%doc qcad-manual-en-%{_enver}.html
+%lang(cs) %doc qcad-manual-cs-%{_csver}.html
+%lang(de) %doc qcad-manual-de-%{_dever}.html
+%lang(hu) %doc qcad-manual-hu-%{_huver}.html
 %attr(755,root,root) %{_bindir}/qcad
 %dir %{_datadir}/qcad
-%{_datadir}/qcad/examples
 %{_datadir}/qcad/fonts
 %{_datadir}/qcad/patterns
 %{_datadir}/qcad/scripts
@@ -125,6 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(it) %{_datadir}/qcad/qm/*_it.qm
 %lang(nl) %{_datadir}/qcad/qm/*_nl.qm
 %lang(nb) %{_datadir}/qcad/qm/*_no.qm
+%lang(pa) %{_datadir}/qcad/qm/*_pa.qm
 %lang(pl) %{_datadir}/qcad/qm/*_pl.qm
 %lang(ru) %{_datadir}/qcad/qm/*_ru.qm
 %lang(sk) %{_datadir}/qcad/qm/*_sk.qm
