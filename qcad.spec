@@ -6,8 +6,8 @@
 %define		_enver		2.0.4.0-1
 %define		_huver		2.0.4.0-1
 Summary:	A professional CAD system
-Summary(pl):	Profesjonalny program CAD
-Summary(pt_BR):	Um sistema de CAD 2D livre (Open Source)
+Summary(pl.UTF-8):   Profesjonalny program CAD
+Summary(pt_BR.UTF-8):   Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
 Version:	2.0.5.0
 Release:	1
@@ -43,15 +43,15 @@ and change drawings with ISO-text and many other features and save
 them as DXF-files. These DXF-files are the interface to many
 CAD-systems such as AutoCAD(c) and many others.
 
-%description -l pl
-QCad jest profesjonalnym programem CAD. QCadem mo¿na prosto
-konstruowaæ i zmieniaæ rysunki i zapisywaæ je w formacie DXF, który
-jest akceptowany przez wiele programów CAD w tym program AutoCAD(c).
+%description -l pl.UTF-8
+QCad jest profesjonalnym programem CAD. QCadem moÅ¼na prosto
+konstruowaÄ‡ i zmieniaÄ‡ rysunki i zapisywaÄ‡ je w formacie DXF, ktÃ³ry
+jest akceptowany przez wiele programÃ³w CAD w tym program AutoCAD(c).
 
-%description -l pt_BR
-O QCad é um sistema profissional de CAD. Com ele você pode facilmente
+%description -l pt_BR.UTF-8
+O QCad Ã© um sistema profissional de CAD. Com ele vocÃª pode facilmente
 construir e mudar desenhos com textos ISO e muitas outras
-características e salvá-los como arquivos DXF. Estes arquivos DXF são
+caracterÃ­sticas e salvÃ¡-los como arquivos DXF. Estes arquivos DXF sÃ£o
 a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 
 %prep
