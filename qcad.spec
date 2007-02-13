@@ -6,8 +6,8 @@
 %define		_enver		2.0.4.0-1
 %define		_huver		2.0.4.0-1
 Summary:	A professional CAD system
-Summary(pl.UTF-8):   Profesjonalny program CAD
-Summary(pt_BR.UTF-8):   Um sistema de CAD 2D livre (Open Source)
+Summary(pl.UTF-8):	Profesjonalny program CAD
+Summary(pt_BR.UTF-8):	Um sistema de CAD 2D livre (Open Source)
 Name:		qcad
 Version:	2.0.5.0
 Release:	1
