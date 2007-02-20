@@ -28,13 +28,14 @@ Source6:	http://www.ribbonsoft.com/archives/qcad/%{name}-manual-hu-%{_huver}.htm
 # Source6-md5:	56c94d907761d4affa00c029f52fe96d
 Patch0:		%{name}-gcc4.patch
 URL:		http://www.ribbonsoft.com/qcad.html
-BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	qmake
 BuildRequires:	qt-devel >= 3.0.5
 BuildRequires:	qt-linguist
+BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
+BuildRequires:	xorg-lib-libXext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,6 +58,8 @@ a interface para muitos outros sistemas de CAD, como o AutoCAD(c).
 %prep
 %setup -q -n %{name}-%{version}-1-community.src -a3 -a4 -a5 -a6
 %patch0 -p1
+
+sed -i -e 's/-pedantic//' mkspecs/defs.pro
 
 %build
 QTDIR=%{_prefix}; export QTDIR
