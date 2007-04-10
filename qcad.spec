@@ -31,7 +31,7 @@ URL:		http://www.ribbonsoft.com/qcad.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	qmake
-BuildRequires:	qt-devel >= 3.0.5
+BuildRequires:	qt-devel >= 3:3.0.5
 BuildRequires:	qt-linguist
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
