@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=QCad
 Comment=QCad - 2D CAD system
 Comment[pl]=QCad - dwuwymiarowy CAD
-Icon=qcad.png
+Icon=qcad
 Exec=qcad
 Terminal=false
 Type=Application
