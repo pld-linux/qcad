@@ -1,6 +1,3 @@
-# TODO:
-# - separate language packages
-# - manual supbackage (languaged?)
 %define		_csver		2.0.4.0-1
 %define		_dever		2.0.4.0-1
 %define		_enver		2.0.4.0-1
