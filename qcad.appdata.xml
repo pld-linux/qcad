@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id type="desktop">qcad.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>Powerful 2D CAD system</summary>
+  <name>QCad</name>
+  <project_license>GPL-3.0 and GPL-2.0+ and LGPL-2.0+ and MIT and BSD-2-Clause and CC-BY-2.0</project_license>
+  <categories>
+   <category>Application</category>
+   <category>Graphics</category>
+   <category>Engineering</category>
+  </categories>
+  <description>
+    <p>
+      QCAD is an application for computer aided drafting (CAD) in two dimensions (2D).
+      With QCAD you can create technical drawings such as plans for buildings,
+      interiors, mechanical parts or schematics and diagrams.
+    </p>  
+    <p>
+      QCAD was designed with modularity, extensibility and portability in mind.
+      But what people notice most often about QCAD is its intuitive
+      user interface.
+      QCAD is an easy to use but powerful 2D CAD system for everyone.
+      You don't need any CAD experience to get started with QCAD immediately.
+
+      Main Features
+
+       Layers
+       Blocks (grouping)
+       35 CAD fonts included
+       Support for TrueType fonts
+       Various Metrical and Imperial units
+       DXF and DWG input and output
+       Printing to scale
+       Printing on multiple pages
+       Over 40 construction tools
+       Over 20 modification tools
+       Construction and modification of points, lines, arcs, circles, ellipses, splines, polylines, texts, dimensions, hatches, fills, raster images
+       Various powerful entity selection tools
+       Object snaps
+       Measuring tools
+       Part library with over 4800 CAD parts
+       Very complete and extremely powerful ECMAScript scripting interface
+    </p>
+   </description>
+  <url type="homepage">http://www.ribbonsoft.com/qcad.html</url>
+  <screenshots>
+    <screenshot type="default">
+     <image>http://www.qcad.org/images/qcad3_linux_t.png</image>
+    </screenshot>
+    <screenshot>
+     <image>http://www.qcad.org/images/tool_matrix_t.png</image>
+    </screenshot>
+    <screenshot>
+     <image>http://www.qcad.org/images/print_preview_multipage_t.png</image>
+    </screenshot>
+    <screenshot>
+     <image>http://www.qcad.org/images/dark_theme_t.png</image>
+    </screenshot>
+  </screenshots>
+  <updatecontact>sagitter_at_fedoraproject.org</updatecontact>
+</component>
